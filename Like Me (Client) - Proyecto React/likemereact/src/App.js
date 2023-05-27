@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 
-const urlBaseServer = "http://localhost:3000";
+const urlBaseServer = "http://localhost:3001";
 
 function App() {
   const [titulo, setTitulo] = useState("");
@@ -19,7 +19,7 @@ function App() {
   };
 
   const agregarPost = async () => {
-    const post = { titulo, url: imgSrc, descripcion };
+    const post = { titulo, img: imgSrc, descripcion };
     await axios.post(urlBaseServer + "/posts", post);
     getPosts();
   };
